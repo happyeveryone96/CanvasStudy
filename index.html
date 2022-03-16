@@ -9,11 +9,15 @@
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
 
-        ctx.beginPath(); // 새로운 경로 생성
-        ctx.moveTo(75, 50);
-        ctx.lineTo(100, 75);
-        ctx.lineTo(100, 25);
-        ctx.fill(); // 경로의 내부를 채워서 내부가 채워진 도형을 그린다.
+        ctx.beginPath();
+        ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+        ctx.moveTo(110, 75); // 펜을 x와 y로 지정된 좌표로 옮긴다.
+        ctx.arc(75, 75, 35, 0, Math.PI, false); // Mouth (clockwise)
+        ctx.moveTo(65, 65);
+        ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Left eye
+        ctx.moveTo(95, 65);
+        ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Right eye
+        ctx.stroke();
       }
     }
   </script>
