@@ -9,18 +9,18 @@
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
 
-        // Quadratric curves example
+        // Cubic curves example
         ctx.beginPath();
-        ctx.moveTo(75, 25);
-        ctx.quadraticCurveTo(25, 25, 25, 62.5);
-        // cp1x 및 cp1y로 지정된 제어점을 사용하여 현재 펜의 위치에서 
-        // x와 y로 지정된 끝점까지 이차 베지어 곡선을 그립니다.
-        ctx.quadraticCurveTo(25, 100, 50, 100);
-        ctx.quadraticCurveTo(50, 120, 30, 125);
-        ctx.quadraticCurveTo(60, 120, 65, 100);
-        ctx.quadraticCurveTo(125, 100, 125, 62.5);
-        ctx.quadraticCurveTo(125, 25, 75, 25);
-        ctx.stroke();
+        ctx.moveTo(75, 40);
+        ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+        // (cp1x, cp1y) 및 (cp2x, cp2y)로 지정된 제어점을 사용하여 
+        // 현재 펜 위치에서 x 및 y로 지정된 끝점까지 삼차 베지어 곡선을 그립니다.
+        ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+        ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+        ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+        ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+        ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
+        ctx.fill();
       }
     }
   </script>
